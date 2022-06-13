@@ -3,8 +3,10 @@ Introdução.
 O Js pode ser utilizado diretamente no Body, com o <script></script>, também pode ser utilizado sendo referenciado por arquivo externo, com o 
 <script src="nomedoarquivo.js"></script>, utilizado no head (carregamento do script será realizado antes do carregamento do corpo da página) 
 ou diretamente no body, é importante observar o posicionamento do mesmo, caso desejemos alterar um elemento o script js deve estar após este. 
+___ ___ ___
 
 O console(control+shift+J) pode ser utilizado no navegador em nossas aplicações para verificarmos erros. 
+___ ___ ___
 
 Para exibição na tela temos os seguintes comandos: 
 
@@ -17,5 +19,20 @@ window.alert("Mensagem de exemplo") // Quem ta mostrando a mensagem é a janela 
 console.log("A mensagem inserida aqui aparecerá no console.") // O mais famoso, aparece apenas no console.
 
 prompt("Digite um número.") // Este foi uma dica dos comentários, seria o mesmo que um input do python, é bem interessante. 
+___ ___ ___
+
+var idade = 90; // Não pode iniciar com números, ter caracteres especiais, espaço;
+
+___ ___ ___
+
+Um exemplo simples de condicional: 
+
+var hora = 9
+
+if ( hora < 12 ) {
+    console.log("Bom dia");
+} else {
+    console.log("Não é de manhã!");
+}
 
 
