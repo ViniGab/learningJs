@@ -4,4 +4,18 @@ O Js pode ser utilizado diretamente no Body, com o <script></script>, também po
 <script src="nomedoarquivo.js"></script>, utilizado no head (carregamento do script será realizado antes do carregamento do corpo da página) 
 ou diretamente no body, é importante observar o posicionamento do mesmo, caso desejemos alterar um elemento o script js deve estar após este. 
 
+O console(control+shift+J) pode ser utilizado no navegador em nossas aplicações para verificarmos erros. 
+
+Para exibição na tela temos os seguintes comandos: 
+
+document.getElementById("titulo").innerHTML = "Opa, tudo bem?"; // Altera o conteúdo do titulo para o das aspas.
+
+document.write("Algum Texto"); // Só funciona quando junto do código principal. Inclue a mensagem no corpo do texto.
+
+window.alert("Mensagem de exemplo") // Quem ta mostrando a mensagem é a janela do navegador e não a página. O alert básico
+
+console.log("A mensagem inserida aqui aparecerá no console.") // O mais famoso, aparece apenas no console.
+
+prompt("Digite um número.") // Este foi uma dica dos comentários, seria o mesmo que um input do python, é bem interessante. 
+
 
