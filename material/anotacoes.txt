@@ -1,0 +1,7 @@
+Introdução.
+
+O Js pode ser utilizado diretamente no Body, com o <script></script>, também pode ser utilizado sendo referenciado por arquivo externo, com o 
+<script src="nomedoarquivo.js"></script>, utilizado no head (carregamento do script será realizado antes do carregamento do corpo da página) 
+ou diretamente no body, é importante observar o posicionamento do mesmo, caso desejemos alterar um elemento o script js deve estar após este. 
+
+
