@@ -83,6 +83,18 @@ No html:
 
 <input onkeyup="digitou(event)" id="campo" type="text" name="usuário" value="Nome do usuário" />
 
+Para que o evento acima ocorra apenas quando o usuário apertar o enter:
+
+function digitou(e) {
+    if(e.keyCode == 13 == true) {
+        let texto = document.getElementById("campo").value;
+
+        console.log(texto);
+    }
+}
+
+___ ___ ___ 
+
 
 
 
