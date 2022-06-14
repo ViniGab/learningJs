@@ -142,7 +142,7 @@ css:
     display: none;
 }
 
-Script / o elemento entre parênteses está relacionado com o this na estrutura Html, Caso não queiramos que o botao suma quando clicamos no mesmo
+Script / o elemento entre parênteses está relacionado com o this na estrutura Html, Caso não queiramos que o botao suma quando clicado no mesmo
 basta remover o elemento/this e o elemento.style.display = 'none', na situação atual deste código o botão mostra o número de telefone quando 
 clicamos no mesmo e some:
 
@@ -151,7 +151,111 @@ function mostrarTelefone(elemento){
     document.getElementById("telefone").style.display = "block";
 }
 
+___ ___ ___
+
+Um Array no JavaScript é um objeto com um construtor único, com uma sintaxe literal e com um conjunto adicional de propriedades e de métodos 
+herdados de um protótipo de Array. Arrays em JavaScript são usados para armazenar vários valores em uma única variável.
+
+let carros = ['Palio', 'Uno', 'Corolla', 'Ferrari'];
+
+Arrays podem ter mais de um conjunto de itens dentro do mesmo, podem ter funções também(não incluso no exemplo abaixo).
+
+let ingredientes = [
+    ['ovo', 'acém', 'Coxa', 'contra filé', 'bisteca'];
+    ['arroz', 'feijão', 'farinha', 'macarrão']
+]
+
+Para acessar o arroz do exemplo acima no console: 
+
+console.log(ingredientes[1][0]);
+
+___ ___ ___ 
+
+Um objeto é uma coleção de propriedades, e uma propriedade é uma associação entre um nome (ou chave) e um valor. Um valor de propriedade 
+pode ser uma função, que é então considerada um método do objeto. Diferente do array é construido com chaves {}. Exemplo abaixo:
+
+let carro = {
+    nome:'Fiat',
+    modelo:'Uno',
+    peso: '800kg',
+    ligado: false,
+    ligar: function() {
+        this.ligado = true;
+        console.log("Ligando o "+this.modelo);
+        console.log("Carro ligado!")
+    },
+    acelerar: function() {
+        if(this.ligado == true) {
+            console.log("Vruuum")
+        } else {
+            console.log(this.nome+" "+this.modelo+ " não está ligado.")
+        }
+    }
+};
 
 
+Acessando os elementos acima, as duas primeiras linhas são maneiras para o mesmo objetivo, a segunda é a mais comum: 
 
+console.log(carro['nome']);
+console.log(carro.nome);
+carro.ligar();
+carro.acelerar();
+
+É possível criar objetos dentro do array também, abaixo exemplo e como acessar:
+
+let carrosarray = [ // É possível fazer objetos dentro do array.
+    {nome: 'Fiat', modelo: 'Palio'},
+    {nome: 'Fiat', modelo: 'Uno'},
+    {nome: 'Toyota', modelo: 'Corolla'},
+];
+
+console.log(carrosarray[2].nome)  // Toyota / acessando o objeto dentro do array.
+___ ___ ___ 
+
+A condicional switch avalia uma expressão, combinando o valor da expressão para um cláusula case, e executa as instruções associadas ao case.
+
+HTML:
+
+    <div id="dia"></div>
+
+Script:
+let dia = 3;
+let diaNome = '';
+
+switch(dia) {
+    case 1:
+        diaNome = 'Segunda-feira';
+        break;
+    case 2:
+        diaNome='Terça-Feira';
+        break;
+    case 3:
+        diaNome='Quarta-Feira';
+        break;
+    case 4:
+        diaNome='Quinta-Feira';
+        break;
+    case 5:
+        diaNome='Sexta-Feira';
+        break;
+    case 6:
+        diaNome='Sábado';
+        break;
+    case 7:
+        diaNome='Domingo';
+        break;
+    default:
+        diaNome='Dia desconhecido'; // Default é para valores fora do explicitado.
+        break;
+}
+
+document.getElementById("dia").innerHTML = "Hoje é: "+diaNome;
+
+Obs: podemos usar a expressão para mais de um case caso estas sejam iguais, exemplo: 
+
+switch(dia) {
+    case 6:
+    case 7:
+        diaNome = 'fim de semana';
+        break;
 
