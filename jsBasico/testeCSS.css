@@ -7,17 +7,6 @@ input [type=text] {
     font-size: 14px;
 }
 
-.azul {
-    background-color: #0000FF;
-    color: #FFF;
+#telefone {
+    display: none;
 }
-
-.vermelho {
-    background-color: #FF0000;
-    color: #FFF;
-}
-
-.verde {
-    background-color: #00ff00;
-}
-

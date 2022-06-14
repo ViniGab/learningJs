@@ -79,7 +79,7 @@ function digitou(e) {
     console.log(e);
 }
 
-No html:
+Html:
 
 <input onkeyup="digitou(event)" id="campo" type="text" name="usuário" value="Nome do usuário" />
 
@@ -95,8 +95,61 @@ function digitou(e) {
 
 ___ ___ ___ 
 
+Temos como realizar as mudanças de estilo com o js também, segue um exemplo abaixo onde construimos buttons com cores diferentes, ao apertar os
+mesmos alteram a cor do h1. 
 
 
+Html: 
+
+    <h1 id="titulo">Seja bem vindo(a)</h1>
+
+    <button onclick="azul()">Azul</button>
+    <button onclick="vermelho()">Vermelho</button>
+    <button onclick="verde()">Verde</button>
+
+no script(classList puxa todas as classes do elemento selecionado): 
+
+function azul() {
+    limpar();
+    document.getElementById("titulo").classList.add('azul');
+}
+
+function vermelho() {
+    limpar();
+    document.getElementById("titulo").classList.add('vermelho');
+}
+
+function verde() {
+    limpar();
+    document.getElementById("titulo").classList.add('verde');
+}
+
+function limpar() {
+    document.getElementById("titulo").classList.remove('vermelho');
+    document.getElementById("titulo").classList.remove('azul');
+    document.getElementById("titulo").classList.remove('verde');   
+
+Podemos utilizar também para mostrar/ocultar textos, segue abaixo um exemplo realizado com um botão de mostrar telefone:
+
+Html / o this está relacionado com o elemento em parênteses na estrutura script:
+
+    <div id="telefone">999999999</div>
+
+    <button onclick="mostrarTelefone(this)">Mostrar Telefone</button>
+
+css:
+    #telefone {
+    display: none;
+}
+
+Script / o elemento entre parênteses está relacionado com o this na estrutura Html, Caso não queiramos que o botao suma quando clicamos no mesmo
+basta remover o elemento/this e o elemento.style.display = 'none', na situação atual deste código o botão mostra o número de telefone quando 
+clicamos no mesmo e some:
+
+function mostrarTelefone(elemento){
+    elemento.style.display = 'none';
+    document.getElementById("telefone").style.display = "block";
+}
 
 
 
