@@ -1,4 +1,7 @@
-var hora = 9;
-if ( hora < 12 ) {
-    console.log("Bom dia");
+function clicou() {
+    alert("Você clicou no botão!");
+}
+
+function clicou1() {
+    document.getElementById("titulo").innerHTML = "Obrigado por logar ;)"
 }

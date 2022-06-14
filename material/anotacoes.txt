@@ -21,18 +21,57 @@ console.log("A mensagem inserida aqui aparecerá no console.") // O mais famoso,
 prompt("Digite um número.") // Este foi uma dica dos comentários, seria o mesmo que um input do python, é bem interessante. 
 ___ ___ ___
 
-var idade = 90; // Não pode iniciar com números, ter caracteres especiais, espaço;
 
-___ ___ ___
-
-Um exemplo simples de condicional: 
+Um exemplo simples de condicional, o primeiro True será atendido: 
 
 var hora = 9
 
 if ( hora < 12 ) {
     console.log("Bom dia");
-} else {
+} else if (hora < 18) {
+    console.log("Não é de manhã!");
+} else if (hora <= 23) {
     console.log("Não é de manhã!");
 }
+
+if ( hora >= 12 && hora < 18) { // && = E
+    console.log("Boa tarde");
+} 
+
+if( hora == 12 || hora == 18 ) { // || = Ou
+    console.log("Você está na hora do rush");
+}
+
+___ ___ ___
+
+Eventos podem ser utilizados para quando situações ocorrem no site, temos vários métodos para utilizar, um deles é externamente e quando
+inserirmos no html colocamos como no exemplo abaixo para cliques em um button(onclick=quando clicar, onmouseover=passar o mouse acima,
+onmouseout=tirar o mouse):
+
+Function no script: 
+
+function clicou() {
+    alert("Você clicou no botão!");
+}
+
+function clicou1() {
+    document.getElementById("titulo").innerHTML = "Obrigado por logar ;)"
+}
+
+inserindo no Html: 
+
+<button onclick="clicou(), clicou1()">Clique em mim</button>
+
+Podemos usar diretamente no HTML assim também: 
+
+<button onclick="this.innerHTML='Clicou'">Clique em mim</button> // Quando clicar no button a frase "Clique em mim" vira "Clicou".
+
+<h1 id="titulo" onmouseover="console.log('passou o mouse')" onmouseout="console.log('xD')">Seja bem vindo(a)</h1>
+
+
+
+
+
+
 
 
