@@ -259,3 +259,70 @@ switch(dia) {
         diaNome = 'fim de semana';
         break;
 
+___ ___ ___ 
+
+For, que significa “para” em português, determina que uma ação deve ser executada a partir de uma condição inicial até que seja encontrada
+outra que interrompa o laço. O fluxo de repetição é controlado por uma variável, que é testada a cada repetição até que se encontre a condição
+de parada.
+
+Html: 
+
+<div id="demo"></div>
+
+Script:
+
+let texto = '';
+
+for(let i = 0; i <= 50; i++) { //criação da variável, condição e incrementação.
+    texto = texto + i + '<br/>';
+}
+
+document.getElementById("demo").innerHTML = texto;
+
+Para exibir textos array com o for em lista por exemplo.
+
+let carros = ['Ferrari', 'Fusca', 'Palio', 'Corolla']; 
+
+let html = '<ul>';
+
+for(let i in carros) {
+    html +='<li>'+ carros[i] +'</li>';
+}
+
+html += '</ul>';
+
+document.getElementById("demo").innerHTML = html;
+
+___ ___ ___ 
+
+A declaração while cria um laço que executa uma rotina especifica enquanto a condição de teste for avaliada como verdadeira. A condição 
+é avaliada antes da execução da rotina.
+
+Html: 
+
+    <div id="demo"></div>
+
+Script:
+
+let html = '';
+
+let c = 0;
+
+while(c <= 10) {
+    html += "Número: "+c+"<br/>";
+    c++;
+}
+
+document.getElementById("demo").innerHTML = html;
+
+___ ___ ___ 
+
+Com o document.querySelector agora podemos selecionar as classes e IDs facilmente(semelhante ao css).
+
+document.querySelector("ol.lista");
+
+document.querySelector(".lista");
+
+document.querySelector('#IDdoelementoaqui');
+
+document.querySelectorAll('mesmo padrão dos acima')  // o All no caso é para relatar todos os elementos informados.

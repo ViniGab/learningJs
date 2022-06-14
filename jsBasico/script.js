@@ -1,31 +1,10 @@
-let dia = 3;
-let diaNome = '';
+let html = '';
 
-switch(dia) {
-    case 1:
-        diaNome = 'Segunda-feira';
-        break;
-    case 2:
-        diaNome='Terça-Feira';
-        break;
-    case 3:
-        diaNome='Quarta-Feira';
-        break;
-    case 4:
-        diaNome='Quinta-Feira';
-        break;
-    case 5:
-        diaNome='Sexta-Feira';
-        break;
-    case 6:
-        diaNome='Sábado';
-        break;
-    case 7:
-        diaNome='Domingo';
-        break;
-    default:
-        diaNome='Dia desconhecido'; // Default é para valores fora do explicitado.
-        break;
+let c = 0;
+
+while(c <= 10) {
+    html += "Número: "+c+"<br/>";
+    c++;
 }
 
-document.getElementById("dia").innerHTML = "Hoje é: "+diaNome; 
+
