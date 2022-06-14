@@ -68,6 +68,21 @@ Podemos usar diretamente no HTML assim também:
 
 <h1 id="titulo" onmouseover="console.log('passou o mouse')" onmouseout="console.log('xD')">Seja bem vindo(a)</h1>
 
+Temos eventos de teclado também, com o onkeydown(Enquanto o botao do teclado estiver apertado o evento continua), onkeypress, onkeyup(o evento
+só ocorre quando o botao do teclado sobe).~
+
+Para tratar diretamente do evento nós usamos o event, por exemplo na situação abaixo, para verificar quais teclas o usuário digitou:
+
+No script: 
+
+function digitou(e) {
+    console.log(e);
+}
+
+No html:
+
+<input onkeyup="digitou(event)" id="campo" type="text" name="usuário" value="Nome do usuário" />
+
 
 
 
