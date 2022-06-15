@@ -1,12 +1,8 @@
-body {
-    background-color: #EEEEEE;
+.preto {
+    background-color: #000;
+    color: #FFF;
 }
-
-input [type=text] {
-    padding: 10px;
-    font-size: 14px;
-}
-
-#telefone {
-    display: none;
+.azul {
+    background-color: #00F;
+    color: #000;
 }

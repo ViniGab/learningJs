@@ -1,13 +1,13 @@
-document.getElementById('Exemplo').innerHTML = 'Pedro'; // Com ID.
-document.getElementsByClassName('lista') // Para classes.
-document.getElementsByClassName('lista')[0].innerHTML = 'Item alterado!'; // Para um valor de classe em específico.
-document.getElementsByTagName('button') // Para as tags.
-document.getElementsByTagName('input') // Para as tags.
-document.getElementsByName('text') // Para os campos de inputs e derivados.
+HTML:
 
-document.querySelector('#procurarpeloID') // ID
-document.querySelector('.lista') // Classes, sempre mostra o primeiro que for achado.
-document.querySelectorAll('.lista') // O mesmo do acima, porém mostra todos os achados.
-document.querySelector('button') // Procura pela tag.
-document.querySelector('button').innerHTML = 'Inscreva-se'; // Alterando o conteúdo dentro do button.
+<img src="images/cachorro.jpg" data-animal='Cachorro' class="imagem" /><br/>
 
+<button onclick="trocarImagem('cachorro.jpg', 'Cachorro')">Cachorro</button>
+<button onclick="trocarImagem('gato.jpg', 'Gato')">Cachorro</button>
+
+Script:
+
+function trocarImagem(filename, animalname) {
+    document.querySelector('.imagem').setAttribute('src', 'images/'+filename);
+    document.querySelector('.imagem').setAttribute('data-animal', animalname);
+}
