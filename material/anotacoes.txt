@@ -506,6 +506,119 @@ console.log(parseInt(m))  // Transforma a string em número. temos também o par
 
 ___ ___ ___ 
 
+Métodos de array.
+
+let lista = ['Ovo', 'Farinha', 'Corante', 'Leite'];
+
+console.log(lista.toString()) // Ovo,Farinha,Corante,Leite
+console.log(lista.join(';')) // Transforma o array em string com o valor selecionado. Ovo;Farinha;Corante;Leite
+console.log(lista.indexOf('Corante'))  // Posição do item corante, caso não ache retorna -1.
+// lista.pop();  // Remove o último item da lista.
+// lista.shift();  // Remove o primeiro item da lista.
+// console.log(lista) //[ 'Farinha', 'Corante' ]
+lista.push('Cacau');  // Adiciona item, [ 'Ovo', 'Farinha', 'Corante', 'Leite', 'Cacau' ].
+lista[4] = 'Fermento'; // Mesma função do acima, mas podemos detalhar melhor a posição. [ 'Ovo', 'Farinha', 'Corante', 'Leite', 'Fermento' ]
+// delete(lista[1])  // como o nome diz, deleta o valor. [ 'Ovo', <1 empty item>, 'Corante', 'Leite', 'Fermento' ].
+lista.splice(1, 1) // A partir do item 1, eliminar apenas um item. [ 'Ovo', 'Corante', 'Leite', 'Fermento' ].
+// var exemplo = lista.concat(lista2); para concatenar listas, material apenas de exemplo, não criamos lista2. 
+console.log(lista.sort())  // Ordem alfabética. [ 'Corante', 'Fermento', 'Leite', 'Ovo' ].
+console.log(lista.reverse()) // Inverte a ordem da lista.
+
+Função mapear(map) passa por todos os elementos e aplica algo: 
+
+let listaNumerica = [45, 4, 9, 16, 25];
+let listaNumerica2 = [];
+
+listaNumerica2 = listaNumerica.map(function(item) {
+return item * 2;
+});
+
+console.log(listaNumerica2);  // [ 90, 8, 18, 32, 50 ]
+
+// Podemos realizar o método acima como for também: 
+
+for(let i in listaNumerica) {
+    listaNumerica2.push(listaNumerica[i] * 2)
+}
+
+console.log(listaNumerica2);  // [ 90, 8, 18, 32, 50 ]
+
+Podemos usar também o filter, que funciona com método boolean para filtar/criar novas listas.
+
+let listaNumerica = [45, 4, 9, 16, 25];
+let listaNumerica2 = [];
+
+listaNumerica2 = listaNumerica.filter(function(item){
+    if(item < 20) {
+        return true;
+    } else {
+        return false;
+    }
+});
+
+console.log(listaNumerica2)  // [ 4, 9, 16 ]
+
+No caso de trocarmos o .filter para every, ele verificará se a condição se aplica em todos os números, se todos eles forem True o retorno é
+True, caso contrário False, e no caso de .some ele precisa ter apenas um True para retornar o True.
+
+
+listaNumerica2 = listaNumerica.find(function(item, index, array) {
+    return (item == 16) ? true : false;
+});
+
+console.log(listaNumerica2)  // 16
+
+// Temos também o findIndex, que retorna a posição do item.
+
+___ ___ ___ 
+
+Objeto Date, Cria uma instância JavaScript de Date que representa um único momento no tempo. Objetos Date são baseados no valor de tempo 
+que é o número de milisegundos desde 1º de Janeiro de 1970 (UTC).
+
+let d = new Date();
+
+// No js os meses começam do 0, 0-janeiro, 1-fevereiro... 
+console.log(d);  // Data. Fri Jun 17 2022 13:31:58 GMT-0300 (Horário Padrão de Brasília).
+console.log(d.toDateString() );  // Data mais resumida. Fri Jun 17 2022.
+console.log(d.toUTCString())  // A data resumida com hora. Fri, 17 Jun 2022 16:31:58 GMT. (europa 3 horas a menos.)
+console.log(d.toString()) // Data, igual o primeiro ex.. Fri Jun 17 2022 13:34:32 GMT-0300 (Horário Padrão de Brasília)
+
+let f = new Date(2022, 0, 1, 12, 30, 12);  // Definindo data manualmente, ano, mês, dia, hora, minutos e segundos. 
+let h = new Date('2020-01-01 15:42:17');  // Outra maneira de definir, neste caso o 01 é janeiro.
+// Tanto o JS quanto o PHP Começam a contar os milisegundos a partir de 1970.
+
+console.log(d.getFullYear()); //pega o ano
+
+console.log(d.getMonth()); //pega o mes (0 a 11)
+
+console.log(d.getDay()); //dia da semana (0 a 6) comeca no domingo
+
+console.log(d.getDate()); //pega o dia atual
+
+console.log(d.getHours()); //pega a hora atual
+
+console.log(d.getMinutes()); //pega os minutos atuais
+
+console.log(d.getSeconds()); //pega os segundos
+
+console.log(d.getMilliseconds()); //pega os milisegundos. 
+
+console.log(d.getTime()); //pega os milisegundos de 1970 até a data sinalizada, time stamp. 
+
+// console.log(date.now()); //pega os milisegundos antigos até a data atual com timestamp.
+
+d.setFullYear(2022);  // para mudar o ano.
+d.setMonth(11); // Para mudar o mês.
+d.setDate(10); // Para mudar o dia do mês. 
+d.setDate(d.getDate()+ 5)  // para saber o dia daqui 5 dias por exemplo.
+d.setHours(d.getHours() + 24)  // Para saber a data daqui 24 horas.
+let novoValor = d;
+console.log( novoValor)
+
+
+
+
+
 
 
 
