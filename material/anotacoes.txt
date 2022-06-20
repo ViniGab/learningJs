@@ -615,7 +615,72 @@ d.setHours(d.getHours() + 24)  // Para saber a data daqui 24 horas.
 let novoValor = d;
 console.log( novoValor)
 
+___ ___ ___ 
 
+As funções mais utilizadas de Math. 
+
+
+console.log(Math.round(3.56));  // 4, arredonda o número para o inteiro mais próximo.
+console.log(Math.ceil(3.1));  // 4, sempre arredonda o número para o inteiro maior.
+console.log(Math.abs(-3.154515));  // 3.154515, para saber o absoluto do numero. 
+console.log(Math.min(5, 3, 10, 42, 2, 6, 24, 50, 12));  //  2, pega o menor número de uma lista/cadeia.
+console.log(Math.max(5, 3, 10, 42, 2, 6, 24, 50, 12));  // 50, pega o maior número de uma lista/cadeia.
+console.log(Math.random());  // retorna um número aleatório entre 0 e 1.  
+let valorRandom = Math.floor(Math.random() * 100);  // Gera números aleatórios até o número 99.
+
+___ ___ ___ 
+
+Intervalos. Realizando a inserção de um timer/relógio que mostra a hora em tempo real no site, com botão de iniciar e parar usando setInterval.
+
+HTML: 
+
+    <button onclick="comecar()">Começar</button>
+    <button onclick="parar()">Parar</button>
+    <div class="demo"></div>
+
+
+Script:
+
+let timer;
+
+function comecar() {
+    timer = setInterval(showTime, 1000);  // A função sem os parênteses, e o tempo em seguida, em milisegundos, 1000 = 1 segundo.
+}
+function parar() {
+    clearInterval(timer);
+}
+
+
+function showTime() {
+    let d = new Date();
+    let h = d.getHours();
+    let m = d.getMinutes();
+    let s = d.getSeconds();
+    let txt = h +':'+ m + ':' + s;
+
+    document.querySelector('.demo').innerHTML = txt;
+
+}
+
+Temos também o setTimeout, que é para funções onde você preferencialmente só quer rodar uma vez, determinando o tempo a mesma.
+
+let timer;
+
+// setTimeout(function() {
+//     alert("Rodou :D");
+
+// }, 2000);
+
+
+function rodar() {
+    timer = setTimeout(function() {
+        document.querySelector('.demo').innerHTML = 'Rodou!';
+    }, 2000);
+}
+
+function parar() {
+    clearTimeout(timer);  // Para parar a ação antes dela ser finalizada.
+}
 
 
 
