@@ -693,9 +693,122 @@ let frase = `Meu nome é ${nome} e eu tenho ${idade} anos e ano que vem farei ${
 
 ___ ___ ___ 
 
+Destructuring. 
 
+let pessoa = { 
+    nome: 'João',
+    sobrenome: 'Silvano',
+    social: {
+        facebook: 'Joaozin',
+        instagram: {
+            url: '@Jao',
+            seguidores: 2000
+        },
+    },
+    nomeCompleto: function() {
+        return `${this.nome} ${this.sobrenome}`
+    }
+};
 
+// Da maneira antiga. 
+let nome = pessoa.nome;
+let idade = pessoa.idade;
+let sobrenome = pessoa.sobrenome;
+let instagram = pessoa.social.instagram;
 
+// Com destructuring, exemplos:
 
+let {nome:renomeandoVariavelNome, sobrenome, idade = 18, social:{facebook}, social:{instagram:{url:instagram}}} = pessoa // Para renomear o elemento no destructuring basta nomeVariável:novoNome.
+// No caso de não existir a variável no objeto nós podemos fazer como o exemplo acima de idade. 
+
+console.log(renomeandoVariavelNome, idade, sobrenome, facebook, instagram)  // João 18 Silvano Joaozin @Jao
+
+// O método acima de outra maneira:
+
+let { facebook, instagram } = pessoa.social;
+console.log(facebook, instagram)  //Joaozin Jão
+
+// Com função. 
+
+function pegarNomeCompleto(nome, sobrenome) {
+    return `${nome} ${sobrenome}`;
+}
+
+console.log(pegarNomeCompleto(pessoa.nome, pessoa.sobrenome))  // João Silvano
+
+// Com array. 
+
+let info = ['Mario Ferreira', 'João', 'Alcantara', '@Mariojoao'];
+
+let [ nomeCompleto, nome, sobrenome, instagram] = info;
+
+console.log(nomeCompleto, nome, sobrenome, instagram)  // Mario Ferreira João Alcantara @Mariojoao
+
+// let info = ['nomeCompleto, , , instagram] = info; // Para pegar apenas o primeiro e último item, exemplo. 
+
+___ ___ ___ 
+
+Arrow function
+
+// let somar = (x, y) => {
+//     return x + y
+// }
+
+let somar = (x, y) => x + y;  // return implícito pois está sem as chaves.
+
+// let letrasNoNome = (nome) => {
+//     return nome.length;
+// }
+
+// let letrasNoNome = (nome) => nome.length;
+
+let letrasNoNome = nome => nome.length; // Quando temos apenas um parâ. podemos coloca-lo diretamente.
+
+console.log(somar(10, 5))
+console.log(letrasNoNome('Vinicius'))
+
+___ ___ ___ 
+
+Operador Spread(...):
+
+let numeros = [1,2,3,4];
+let outros = [...numeros, 5, 6, 7, 8];
+
+console.log(outros)  
+
+/* [  resultado da operação acima com spread
+    1, 2, 3, 4,
+    5, 6, 7, 8
+  ] */
+
+// Mais um exemplo. 
+
+let info = {
+    nome: 'Larissa',
+    sobrenome: 'Lacerta',
+    idade: 40,
+};
+
+let novaInfo = {
+    ...info,
+    cidade:"Campina Grande",
+    Estado:"Paraiba",
+    País:"Brasil",
+}
+
+console.log(novaInfo)
+
+// Resultado da operação acima com o ...spread.
+
+/* {
+    nome: 'Larissa',
+    sobrenome: 'Lacerta',
+    idade: 40,
+    cidade: 'Campina Grande',
+    Estado: 'Paraiba',
+    'País': 'Brasil'
+  } */
+
+___ ___ ___
 
 

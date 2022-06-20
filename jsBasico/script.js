@@ -1,24 +1,25 @@
-let pessoa = { 
-    nome: 'João',
-    sobrenome: 'Silvano',
-    social: {
-        facebook: 'Joaozin',
-        instagram: 'Jão',
-    },
-    nomeCompleto: function() {
-        return `${this.nome} ${this.sobrenome}`
-    }
+let info = {
+    nome: 'Larissa',
+    sobrenome: 'Lacerta',
+    idade: 40,
 };
 
-// Da maneira antiga. 
-// let nome = pessoa.nome;
-// let idade = pessoa.idade;
-// let sobrenome = pessoa.sobrenome;
-// let instagram = pessoa.social.instagram;
+let novaInfo = {
+    ...info,
+    cidade:"Campina Grande",
+    Estado:"Paraiba",
+    País:"Brasil",
+}
 
-// Com destructuring.
+console.log(novaInfo)
 
-let {nome:renomeandoVariavelNome, sobrenome, idade = 18} = pessoa // Para renomear o elemento no destructuring basta nomeVariável:novoNome.
-// No caso de não existir a variável no objeto nós podemos fazer como o exemplo acima de idade. 
+// Resultado da operação acima com o ...spread.
 
-console.log(renomeandoVariavelNome, idade, sobrenome)  // João 40 Silvano
+/* {
+    nome: 'Larissa',
+    sobrenome: 'Lacerta',
+    idade: 40,
+    cidade: 'Campina Grande',
+    Estado: 'Paraiba',
+    'País': 'Brasil'
+  } */
