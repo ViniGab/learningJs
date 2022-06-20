@@ -682,6 +682,17 @@ function parar() {
     clearTimeout(timer);  // Para parar a ação antes dela ser finalizada.
 }
 
+___ ___ ___ 
+
+Template strings. Para facilitar a utilização das variáveis em strings e substituir a concatenação.
+
+let nome = 'João';
+let idade = 60;
+
+let frase = `Meu nome é ${nome} e eu tenho ${idade} anos e ano que vem farei ${++idade}.`;
+
+___ ___ ___ 
+
 
 
 

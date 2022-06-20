@@ -1,17 +1,24 @@
-let timer;
+let pessoa = { 
+    nome: 'João',
+    sobrenome: 'Silvano',
+    social: {
+        facebook: 'Joaozin',
+        instagram: 'Jão',
+    },
+    nomeCompleto: function() {
+        return `${this.nome} ${this.sobrenome}`
+    }
+};
 
-// setTimeout(function() {
-//     alert("Rodou :D");
+// Da maneira antiga. 
+// let nome = pessoa.nome;
+// let idade = pessoa.idade;
+// let sobrenome = pessoa.sobrenome;
+// let instagram = pessoa.social.instagram;
 
-// }, 2000);
+// Com destructuring.
 
+let {nome:renomeandoVariavelNome, sobrenome, idade = 18} = pessoa // Para renomear o elemento no destructuring basta nomeVariável:novoNome.
+// No caso de não existir a variável no objeto nós podemos fazer como o exemplo acima de idade. 
 
-function rodar() {
-    timer = setTimeout(function() {
-        document.querySelector('.demo').innerHTML = 'Rodou!';
-    }, 2000);
-}
-
-function parar() {
-    clearTimeout(timer);
-}
+console.log(renomeandoVariavelNome, idade, sobrenome)  // João 40 Silvano
