@@ -811,4 +811,145 @@ console.log(novaInfo)
 
 ___ ___ ___
 
+Rest
 
+function adicionar(...numeros) {
+
+    console.log(numeros);
+
+}
+
+adicionar(5, 6, 7, 8, 9, 10)  // Sem os 3 pontos = 5 // Com os 3 pontos = [ 5, 6, 7, 8, 9, 10 ]
+
+
+// Mais um exemplo, com function dessa vez. 
+
+function adicionar(nomes, ...novosNomes) {
+    let novoConjunto = [
+        ...nomes,
+        ...novosNomes
+    ]
+
+    return novoConjunto;
+}
+
+let nomes = ["Bonieky", "Paulo"];
+
+let outros = adicionar(nomes, "Antonio", "Maria", "José");
+
+console.log(outros);  // [ 'Bonieky', 'Paulo', 'Antonio', 'Maria', 'José' ]
+
+___ ___ ___ 
+
+Repeat e includes:
+
+let lista = ['ovo', 'café', 'arroz', 'feijão', 'macarrão'];
+
+console.log(lista.includes('carne')) // O includes faz uma busca na lista. 
+console.log(lista.includes('ovo')) // O includes sempre retorna true ou false.
+
+console.log( 'x'.repeat(20))  // xxxxxxxxxxxxxxxxxxxx
+
+___ ___ ___ 
+
+Object - Keys, Values, Entries
+
+let lista = ['ovo', 'macarrão', 'feijão', 'pipoca'];
+
+console.log( Object.keys(lista));  // [ '0', '1', '2', '3' ]
+console.log( Object.values(lista));  // [ 'ovo', 'macarrão', 'feijão', 'pipoca' ]
+console.log( Object.entries(lista));  // resultado abaixo.
+
+/* 
+[ '0', '1', '2', '3' ]
+[ 'ovo', 'macarrão', 'feijão', 'pipoca' ]
+[
+  [ '0', 'ovo' ],
+  [ '1', 'macarrão' ],
+  [ '2', 'feijão' ],
+  [ '3', 'pipoca' ]
+]
+ */
+
+let pessoa = { 
+    nome: 'João',
+    sobrenome: 'Augustino',
+    idade: 50,
+    endereco: {
+        rua: 'Vieira das rosas',
+        número: 80,
+    }
+};
+
+console.log( Object.keys(pessoa));  //  [ 'nome', 'sobrenome', 'idade', 'endereco' ]
+console.log( Object.values(pessoa));  // [ 'João', 'Augustino', 50, { rua: 'Vieira das rosas', 'número': 80 } ]
+console.log( Object.entries(pessoa)); // resultado abaixo. gera arrays com as chaves/valores. 
+
+/* [
+    [ 'nome', 'João' ],
+    [ 'sobrenome', 'Augustino' ],
+    [ 'idade', 50 ],
+    [ 'endereco', { rua: 'Vieira das rosas', 'número': 80 } ]
+  ] */
+
+___ ___ ___ 
+
+String - padStart, padEnd.
+
+let telefone = '5';
+
+console.log( telefone.padEnd(9, '*') );  // Quantos caracteres são necessários, e o que vai ser incluso caso a meta não seja atingida.
+// resultado acima: 5********.
+
+let cartão = "3123 2982 1458 5033"
+
+let lastDigits = cartão.slice(-4);
+console.log(lastDigits)  // 5033
+
+let cartaoMascarado = lastDigits.padStart(16, '*')  // 
+console.log(`Este é o seu cartão? ${cartaoMascarado}`)  // Este é o seu cartão? ************5033
+
+___ ___ ___ 
+
+Json-JavaScript Object Notation para fazer a comunicação entre as requisições. 
+
+let pessoa = {
+    chave1:"Valor1", 
+    chave2:"Valor2",
+    chave3: ["Valor3", "Valor4", "Valor5"],
+    chave4: {
+        chave5: 10,
+        chave6: 20
+    }
+}
+
+// Acessando os objetos
+console.log(pessoa.chave1) // Valor1
+console.log(pessoa.chave3[1]) // Valor4
+console.log(pessoa.chave4.chave5) // 10-
+
+Para puxar um valor JSON no console podemos usar o: 
+
+let nomevariável = JSON.parse('{"nome": "Vitória", "idade": 90}')  // Para puxar qualquer elemento. No exemplo de pessoa.nome ou apenas pessoa
+
+No caso do JSON.stringify nós transformamos o Json em string para leitura do parse por exemplo. 
+
+Com isso podemos puxar qualquer elemento. No exemplo de pessoa.nome ou apenas pessoa
+
+JSON.stringify({nome: "Vitória", idade: 90})  // '{"nome":"Vitória","idade":90}'
+___ ___ ___ 
+
+// Código síncrono
+
+let nome = "Carlos";
+let sobrenome = "Mario";
+let completo = nome+' '+sobrenome;
+
+// Código Assíncrono
+
+let nome = "Carlos";
+let sobrenome = "Mario";
+let temperatura = maquininha.pegarTemperatura(); // Linha assíncrona.
+let completo = nome+' '+sobrenome;
+
+Toda requisição interna é uma requisição assíncrona. O código assíncrono continua rodando sem interferir no código restante.
