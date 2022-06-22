@@ -953,3 +953,81 @@ let temperatura = maquininha.pegarTemperatura(); // Linha assíncrona.
 let completo = nome+' '+sobrenome;
 
 Toda requisição interna é uma requisição assíncrona. O código assíncrono continua rodando sem interferir no código restante.
+
+___ ___ ___ 
+
+Callback: Uma função callback é uma função passada a outra função como argumento, que é então invocado dentro da função externa para completar 
+algum tipo de rotina ou ação.
+
+___ ___ ___ 
+
+Promise é um objeto usado para processamento assíncrono. Um Promise (de "promessa") representa um valor que pode estar disponível agora, no 
+futuro ou nunca. OBS: Achei a explicação bem complicada, segue o código da aula, revisar depois.
+
+function pegarTemperatura() {
+    return new Promise(function(resolve, reject) {
+        console.log("pegando temperatura...");
+
+        setTimeout(function(){
+            resolve('40 na sombra');
+        }, 2000);
+    });
+}
+
+// Usando a promise. 
+console.log("código antes!")
+
+let temp = pegarTemperatura()
+
+console.log("código durante")
+temp.then(function(resultado) {  // then quando a promise foi cumprida.
+    console.log("Temperatura "+resultado)
+})
+temp.catch(function(error){ // quando deu erro.
+    console.log("Deu erro!")
+})
+console.log("código depois!")
+
+___ ___ ___ 
+
+Fetch() / A API Fetch fornece uma interface JavaScript para acessar e manipular partes do pipeline HTTP, tais como os pedidos e 
+respostas. Ela também fornece o método global fetch() (en-US) que fornece uma maneira fácil e lógica para buscar recursos de forma 
+assíncrona através da rede. Abaixo um exemplo onde pegamos uma fake API para fornecer dados de posts e consumir com o Get em nosso site.
+
+HTML: 
+
+<body>
+    
+    <button onclick="loadPosts()">Carregar Posts</button>
+
+    <div id="posts"></div>
+
+    <script type="text/javascript" src="script.js"></script>
+</body>
+
+
+SCRIPT: 
+
+function loadPosts() {
+    document.getElementById("posts").innerHTML = 'Carregando...'
+
+    fetch('https://jsonplaceholder.typicode.com/posts')  // fetch retorna uma promisse
+        .then(function(resultado){
+            return resultado.json();
+        })
+        .then(function(json){
+            document.getElementById("posts").innerHTML = json.length+' posts'
+        })
+        .catch(function(error){
+            console.log("Deu problema!")
+        })
+}
+
+
+/* Obs: logo após o fetch e os parênteses, nós podemos colocar uma chave e definir o método que vai ser utilizado, como Get, Post, etc. 
+O padrão que já vem setado é GET. */
+
+___ ___ ___ 
+
+
+
